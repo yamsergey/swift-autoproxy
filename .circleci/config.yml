@@ -1,4 +1,4 @@
-version:2.1
+version: 2.1
 jobs:
   test:
     docker: 
@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run: swift test
-  workflows:
-    version: 2.1
-    test:
-      jobs:
-        - test
+workflows:
+  version: 2.1
+  test:
+    jobs:
+      - test
