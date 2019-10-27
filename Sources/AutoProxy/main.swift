@@ -4,7 +4,7 @@ let router = Router()
 
 router.get("/") { request, response, next in
     response.send(request.headers["user-agent"])
-    print(request.headers["user-agent"])
+    print(request.headers["user-agent"] as Any)
     next()
 }
 
