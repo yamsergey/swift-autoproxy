@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test:
     docker: 
-      - image: swift:5.1.1
+      - image: yamsergey/swift-autoproxy-primary-build:0.0.3
     steps:
       - checkout
       - run: swift test
