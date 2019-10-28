@@ -6,6 +6,8 @@ help:
 	@echo "  clean  clean the project"
 	@echo "  linux-test-gen will generate files needed to run tests on Linux, works only on Mac OS"	
 	@echo "  xcode generate xcode project"
+	@echo "  docker-build build docker image"
+	@echo "  docker-push image to registry"
 
 test:
 	swift test
@@ -24,3 +26,9 @@ linux-test-gen:
 
 xcode:
 	swift package generate-xcodeproj 
+
+docker-build:
+	docker build -t yamsergey/swift-autoproxy-primary-build:$(VERSION) .circleci/images/
+
+docker-push:
+	docker push yamsergey/swift-autoproxy-primary-build:$(VERSION)
