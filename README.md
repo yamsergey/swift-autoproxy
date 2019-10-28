@@ -1,3 +1,8 @@
-# AutoProxy
+[![CircleCI](https://circleci.com/gh/yamsergey/swift-autoproxy.svg?style=svg)](https://circleci.com/gh/yamsergey/swift-autoproxy)
 
-A description of this package.
+# Swift AutoProxy
+
+This app helps to setup AutoProxy configuration for developemnt purpose.
+
+## State 
+In active development
