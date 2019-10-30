@@ -14,7 +14,7 @@ This app can solve the issue above. It's simple http server which now start serv
 
 ### Usge 
 
-For exanple, request to [http://localhost:8081/?host=localhost&port=8080](http://localhost:8081/?host=localhost&port=8080) will return
+For exanple, request to [http://localhost:8081?host=localhost&port=8080](http://localhost:8081/?host=localhost&port=8080) will return
 ```
 function FindProxyForURL(url, host)
 {
@@ -27,6 +27,10 @@ Which means that when proxy on `localhost:8080` is available a client will try u
 
 ### Special cases
 
+#### Configure for Android Emulator
+From emulator you can always refer to host machine with ip `10.0.2.2`. Usual link for `Auto-Proxy` config on Android will looks like `http://10.0.2.2:8081/?host=10.0.2.2&port=8080` 
+
+#### Proxy only Android and iOS virtual devices
 As an experiment, when you specify parametere `all=false` `Auto-Config` file will respond only to requests for Android  Emulator and iOS simulator. So you can serfe Netwrok on your development machine without proxy and at the same time monitor traffic from Android/iOS virtual device.
 
 
