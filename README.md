@@ -31,7 +31,7 @@ Which means that when proxy on `localhost:8080` is available a client will try u
 From emulator you can always refer to host machine with ip `10.0.2.2`. Usual link for `Auto-Proxy` config on Android will looks like `http://10.0.2.2:8081/?host=10.0.2.2&port=8080` 
 
 #### Proxy only Android and iOS virtual devices
-As an experiment, when you specify parametere `all=false` `Auto-Config` file will respond only to requests for Android  Emulator and iOS simulator. So you can serfe Netwrok on your development machine without proxy and at the same time monitor traffic from Android/iOS virtual device.
+As an experiment, when you specify parametere `all=false` `Auto-Config` file will respond only to requests from Android  Emulator and iOS simulator. So you can serf Netwrok on your development machine without proxy and at the same time monitor traffic from Android/iOS virtual device.
 
 
 ### Build
