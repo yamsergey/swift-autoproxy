@@ -28,3 +28,15 @@ Which means that when proxy on `localhost:8080` is available a client will try u
 ### Special cases
 
 As an experiment, when you specify parametere `all=false` `Auto-Config` file will respond only to requests for Android  Emulator and iOS simulator. So you can serfe Netwrok on your development machine without proxy and at the same time monitor traffic from Android/iOS virtual device.
+
+
+### Build
+
+Currently the app has prebuild version for Mac only.
+
+Mac OS:
+`swift build` and then `swift run`
+
+Linux/WSL(Windows Subsytem for Linux):
+`swift build` and then `swift run`
+> for required dependencies please check .circleci/images/Dockerfile 
