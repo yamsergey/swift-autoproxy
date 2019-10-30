@@ -19,9 +19,9 @@ router.get("/") { request, response, next in
         return
     }
     
-    let port = request.queryParameters["port"] ?? ""
+    let port = request.queryParameters["host"] ?? ""
     let host = request.queryParameters["proxy"] ?? ""
-    let force = request.queryParameters["force"] ?? "false"
+    let force = request.queryParameters["all"] ?? "true"
     
     if userAgent.lowercased().starts(with: "CFNetworkAgent".lowercased()) {
         response.headers["Content-Type"] = "application/x-ns-proxy-autoconfig"
