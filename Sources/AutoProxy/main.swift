@@ -19,8 +19,8 @@ router.get("/") { request, response, next in
         return
     }
     
-    let port = request.queryParameters["port"] ?? ""
-    let host = request.queryParameters["host"] ?? ""
+    let port = request.queryParameters["port"] ?? "8080"
+    let host = request.queryParameters["host"] ?? request.hostname
     let force = request.queryParameters["all"] ?? "true"
     
     if userAgent.lowercased().starts(with: "CFNetworkAgent".lowercased()) {
