@@ -1,6 +1,7 @@
 help:
 	@echo "The following make targets are available:"
 	@echo "  test: run all tests with coverage"
+	@echo "  release: build release version"
 	@echo "  build:  build the project"
 	@echo "  build-all: build sources and tests"
 	@echo "  clean: clean the project"
@@ -14,6 +15,9 @@ test:
 
 build:
 	swift build
+
+release:
+	wift build -c release
 
 build-all:
 	swift build --build-tests
