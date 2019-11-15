@@ -23,7 +23,7 @@ build-all:
 	swift build --build-tests
 
 clean:
-	swift package --clean 
+	swift package clean 
 
 linux-test-gen:
 	swift test --generate-linuxmain
