@@ -10,7 +10,8 @@ let package = Package(
         .library(name: "AutoProxyModel", targets: ["AutoProxyModel"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/IBM-Swift/Kitura", from: "2.8.0")
+        .package(url: "https://github.com/IBM-Swift/Kitura", from: "2.8.0"),
+        .package(url: "https://github.com/Carthage/Commandant.git", from: "0.17.0")
     ],
     targets: [
         .target(
@@ -19,7 +20,7 @@ let package = Package(
             path: "Sources/Model"),
         .target(
             name: "AutoProxy",
-            dependencies: ["AutoProxyModel", "Kitura"],
+            dependencies: ["AutoProxyModel", "Kitura", "Commandant"],
             path: "Sources/AutoProxy"),
         .testTarget(
             name: "AutoProxyTests",

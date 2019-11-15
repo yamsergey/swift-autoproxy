@@ -1,46 +1,23 @@
 import Kitura
+import Commandant
 
-let router = Router()
+let commands = CommandRegistry<Error>()
+commands.register(RunCommand())
 
-func autoProxyConfig(with host: String, on port: String) -> String {
-"""
-    function FindProxyForURL(url, host)
-    {
-        return "PROXY \(host):\(port); DIRECT";
+var arguments = CommandLine.arguments
+
+assert(!arguments.isEmpty)
+arguments.remove(at: 0)
+
+if let verb = arguments.first {
+    // Remove the command name.
+    arguments.remove(at: 0)
+
+    if let result = commands.run(command: verb, arguments: arguments) {
+        // Handle success or failure.
+    } else {
+        // Unrecognized command.
     }
-    
-"""
+} else {
+    // No command given.
 }
-
-router.get("/") { request, response, next in
-    guard let userAgent = request.headers["user-agent"] else {
-        response.statusCode = HTTPStatusCode.badRequest
-        next()
-        return
-    }
-    
-    let port = request.queryParameters["port"] ?? "8080"
-    let host = request.queryParameters["host"] ?? request.hostname
-    let force = request.queryParameters["all"] ?? "true"
-    
-    if userAgent.lowercased().starts(with: "CFNetworkAgent".lowercased()) {
-        response.headers["Content-Type"] = "application/x-ns-proxy-autoconfig"
-        response.send(autoProxyConfig(with: host, on: port))
-        next()
-    } else if userAgent.lowercased().starts(with: "Dalvik".lowercased()) {
-        response.headers["Content-Type"] = "application/x-ns-proxy-autoconfig"
-        response.send(autoProxyConfig(with: host, on: port))
-        next()
-    } else if force == "true" {
-        response.headers["Content-Type"] = "application/x-ns-proxy-autoconfig"
-        response.send(autoProxyConfig(with: host, on: port))
-        next()
-    }
-    else {
-        response.statusCode = HTTPStatusCode.badRequest
-        next()
-    }
-}
-
-Kitura.addHTTPServer(onPort: 8081, with: router)
-Kitura.run()
