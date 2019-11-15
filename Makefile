@@ -17,7 +17,7 @@ build:
 	swift build
 
 release:
-	wift build -c release
+	swift build -c release
 
 build-all:
 	swift build --build-tests
