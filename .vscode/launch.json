@@ -10,7 +10,7 @@
             "request": "launch",
             "name": "Debug",
             "program": "${workspaceFolder}/.build/debug/AutoProxy",
-            "args": ["run", "-l", "--port 8081"],
+            "args": ["run", "-l", "--port", "8081"],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "build"
         }
