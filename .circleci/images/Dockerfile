@@ -1,4 +1,4 @@
-FROM swift:5.1.1
+FROM swift:5.1.2
 
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && apt-get -q update && \
     apt-get -q install -y \
