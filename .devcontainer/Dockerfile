@@ -12,3 +12,11 @@ RUN git config --global user.email "yamsergey@gmail.com"
 RUN git config --global user.name "Sergey Yamshchikov"
 COPY .vimrc /root/
 RUN rm -r /var/lib/apt/lists/*
+
+#Build Swift Lint
+RUN git clone https://github.com/realm/SwiftLint.git
+WORKDIR SwiftLint
+RUN swift build -c release --static-swift-stdlib
+RUN mv .build/x86_64-unknown-linux/release/swiftlint /usr/local/bin/
+WORKDIR ..
+RUN rm -rf SwiftLint
