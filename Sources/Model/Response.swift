@@ -1,6 +1,6 @@
 import Foundation
 
 protocol Response {
-    var body: String { set get }
-    var headers: [String: String] { set get }
+    var body: String { get set }
+    var headers: [String: String] { get set }
 }

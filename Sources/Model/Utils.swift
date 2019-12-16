@@ -1,5 +1,5 @@
 protocol RequestSource {
-    var userAgent: String { set get}
+    var userAgent: String { get set}
 }
 
 func isAndroid(request: Request) {

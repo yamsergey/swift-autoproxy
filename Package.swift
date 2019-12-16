@@ -7,7 +7,7 @@ let package = Package(
     name: "AutoProxy",
     products: [
         .executable(name: "AutoProxy", targets: ["AutoProxy"]),
-        .library(name: "AutoProxyModel", targets: ["AutoProxyModel"]),
+        .library(name: "AutoProxyModel", targets: ["AutoProxyModel"])
     ],
     dependencies: [
         .package(url: "https://github.com/IBM-Swift/Kitura", from: "2.8.0"),
@@ -24,6 +24,6 @@ let package = Package(
             path: "Sources/AutoProxy"),
         .testTarget(
             name: "AutoProxyTests",
-            dependencies: ["AutoProxyModel"]),
+            dependencies: ["AutoProxyModel"])
     ]
 )

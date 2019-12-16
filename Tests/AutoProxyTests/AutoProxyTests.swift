@@ -4,6 +4,6 @@ import AutoProxyModel
 
 final class AutoProxyTests: XCTestCase {
     func testExample() throws {
-        let _ = Settings()
+        _ = Settings()
     }
 }
