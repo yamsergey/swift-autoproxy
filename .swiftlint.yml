@@ -1,0 +1,5 @@
+excluded:
+        - .build
+        - .circleci
+        - .vscode
+        - .devcontainer
