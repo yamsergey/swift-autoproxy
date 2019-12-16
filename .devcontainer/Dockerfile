@@ -14,6 +14,7 @@ COPY .vimrc /root/
 RUN rm -r /var/lib/apt/lists/*
 
 #Build Swift Lint
+#https://github.com/realm/SwiftLint/issues/732
 RUN git clone https://github.com/realm/SwiftLint.git
 WORKDIR SwiftLint
 RUN swift build -c release --static-swift-stdlib
