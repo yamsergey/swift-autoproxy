@@ -8,5 +8,7 @@ RUN apt-get -q install -y \
     curl
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+RUN git config --global user.email "yamsergey@gmail.com"
+RUN git config --global user.name "Sergey Yamshchikov"
 COPY .vimrc /root/
 RUN rm -r /var/lib/apt/lists/*
