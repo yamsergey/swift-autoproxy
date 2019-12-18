@@ -35,6 +35,10 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 " Autocomplition ===============
 
+" LSP ===========
+nnoremap <C-b> :LspDefinition <CR>
+" ===============
+
 " Color Scheme Start ===========
 " important!!
 set termguicolors
